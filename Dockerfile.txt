@@ -1,0 +1,16 @@
+# Dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Copy the code into the container
+COPY . .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the port
+EXPOSE 5000
+
+# Set the entrypoint command
+CMD ["python", "app.py"]
